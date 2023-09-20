@@ -44,6 +44,7 @@
 ### `$dmidecode`
 #### 执行结果
 ![](./img/P8.png)
+
 看起来这是个需要sudo权限的命令。由于输出较长，这里只取输出的前五十行。在命令行中输入`sudo dmidecode | head -n 50`之后，就得到了正确的输出。
 ![](./img/P9.png)
 #### 命令文档
@@ -56,8 +57,10 @@
 **观察输出结果，以内存为例，可以获得哪些信息？**
 在命令文档的“OPTIONS”部分中，我们发现执行`sudo dmidecode -t memory`命令可以只打印与内存相关的信息。
 ![](./img/P12.png)
+
 为了获取与内存相关的输出，执行`sudo dmidecode -t memory`命令，得到的其中一条输出如下图所示：
 ![](./img/P11.png)
+
 其中，我们可以得到内存总宽度（Total Width）、数据总宽度（Data Width）、内存模块大小（Size）、内存类型（Type）、内存速度（Speed）和内存等级（Rank）等与内存有关的重要信息。
 
 ### `$numactl -H`
@@ -300,34 +303,41 @@ int main() {
 ```
 执行`make swap`编译以上代码，并通过`./swap`执行代码，我们得到
 ![](./img/P32.png)
+
 可见，两个变量的值被成功地交换了。
 
 ### Write-up 5
 **Now, what do you see when you type `make clean`; `make`? **
 执行`make`命令，我们得到
 ![](./img/P33.png)
+
 容易发现，目录下出现了`matrix_multiply`等可执行文件。
 
 执行`make clean`，我们得到
 ![](./img/P34.png)
+
 容易发现，刚刚编译得到的可执行文件都被删除了，目录下剩下的文件和编译前一样。
 
 再执行`make`，我们得到
 ![](./img/P35.png)
+
 可以发现，目录下的`matrix_multiply.c`等C代码被重新编译，生成相应的可执行文件。
 
 ### Write-up 6
 **What output do you see from AddressSanitizer regarding the memory bug? Paste it into your writeup here.**
 逐条执行实验手册上的编译指令并执行`./matrix_multiply`运行代码，我们得到
 ![](./img/P36.png)
+
 输出的警告信息显示程序运行的过程中出现了缓冲区溢出的情况。
 
 ### Write-up 7
 **After you fix your program, run `./matrix_multiply -p`. Paste the program output showing that the matrix multiplication is working correctly. **
 重新编译代码并执行`valgrind ./matrix_multiply -p`后，我们得到
 ![](./img/P37.png)
+
 可以发现，`matrix_multiply_run`函数尝试读取了一个无效的内存地址，导致了段错误。它发生在`0x108F8B`处。我们使用gdb打印出`matrix_multiply_run`函数的汇编代码:
 ![](./img/P38.png)
+
 大致可以判断发生问题的位置出在结束读取矩阵A，转而读取矩阵B的地方。结合执行代码时打印出的矩阵中矩阵A的列数比矩阵B的行数多了一，可以判断，由于矩阵A本来应该是四列，而在生成矩阵时多生成了一列，导致读取矩阵A的最后一列时读到了无效的地址。所以，我们只需把`testbed.c`中的
 ```c
   A = make_matrix(kMatrixSize, kMatrixSize+1);
@@ -343,6 +353,7 @@ int main() {
 即可。
 此后，重新编译文档并再次执行`matrix_multiply`，我们得到
 ![](./img/P39.png)
+
 可见，在打印矩阵B之后、矩阵C之前出现了引用未初始化变量的情况。打开代码，发现运算矩阵C时，我们是在矩阵C前一次迭代的值的基础上加上某个值的，但是在第一轮迭代之前、执行`make_matrix(C)`之后我们并没有初始化矩阵C的值。所以，合适的做法是，修改`make_matrix()`函数，在初始化矩阵之后将其初始化为零矩阵，具体来说，把
 ```c
 // Allocates a row-by-cols matrix and returns it
@@ -387,12 +398,14 @@ matrix* make_matrix(int rows, int cols) {
 ```
 修改后重新编译文档并再次执行`matrix_multiply`，我们得到
 ![](./img/P40.png)
+
 现在Valgrind没有再报任何错误。
 
 ### Write-up 8
 **Paste the output from Valgrind showing that there is no error in your program. **
 首先执行`valgrind --leak-check=full ./matrix_multiply -p`，我们得到
 ![](./img/P41.png)
+
 和实验手册显示的结果一样，这段代码是存在内存泄漏的。所以，我们修改`testbed.c`，在`main()`函数的末尾加上释放内存的代码。具体来说，把
 ```c
 ...
@@ -429,4 +442,5 @@ if (show_usec) {
 ```
 重新编译代码并再次运行`valgrind --leak-check=full ./matrix_multiply -p`，我们得到
 ![](./img/P42.png)
+
 从以上结果可以看出，修改后的代码不存在内存泄漏问题了。
