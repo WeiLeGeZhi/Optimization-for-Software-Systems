@@ -1,6 +1,0 @@
-
-            Benchmark=     SPECjvm2008
-            Kit_version=   1.01
-            Build_user=    dagastin
-            Build_date=    20090519
-        
