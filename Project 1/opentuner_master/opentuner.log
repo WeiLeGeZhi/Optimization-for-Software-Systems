@@ -1,0 +1,35 @@
+[2023-10-04 19:07:44,016] WARNING opentuner.search.technique: GridSearch has not requested a new result for 50 rounds @technique.py:252
+[2023-10-04 19:07:44,381] WARNING opentuner.search.technique: GridSearch has not requested a new result for 100 rounds @technique.py:252
+[2023-10-04 19:07:44,730] WARNING opentuner.search.technique: GridSearch has not requested a new result for 150 rounds @technique.py:252
+[2023-10-04 19:07:45,100] WARNING opentuner.search.technique: GridSearch has not requested a new result for 200 rounds @technique.py:252
+[2023-10-04 19:07:45,444] WARNING opentuner.search.technique: GridSearch has not requested a new result for 250 rounds @technique.py:252
+[2023-10-04 19:07:45,804] WARNING opentuner.search.technique: GridSearch has not requested a new result for 300 rounds @technique.py:252
+[2023-10-04 19:07:46,163] WARNING opentuner.search.technique: GridSearch has not requested a new result for 350 rounds @technique.py:252
+[2023-10-04 19:07:46,495] WARNING opentuner.search.technique: GridSearch has not requested a new result for 400 rounds @technique.py:252
+[2023-10-04 19:07:46,854] WARNING opentuner.search.technique: GridSearch has not requested a new result for 450 rounds @technique.py:252
+[2023-10-04 19:07:47,214] WARNING opentuner.search.technique: GridSearch has not requested a new result for 500 rounds @technique.py:252
+[2023-10-04 19:07:47,555] WARNING opentuner.search.technique: GridSearch has not requested a new result for 550 rounds @technique.py:252
+[2023-10-04 19:07:47,555] WARNING opentuner.search.technique: GridSearch is being reset @technique.py:255
+[2023-10-04 19:07:47,863] WARNING opentuner.search.technique: GridSearch has not requested a new result for 50 rounds @technique.py:252
+[2023-10-04 19:07:48,286] WARNING opentuner.search.technique: GridSearch has not requested a new result for 100 rounds @technique.py:252
+[2023-10-04 19:07:48,640] WARNING opentuner.search.technique: GridSearch has not requested a new result for 150 rounds @technique.py:252
+[2023-10-04 19:07:48,951] WARNING opentuner.search.technique: GridSearch has not requested a new result for 200 rounds @technique.py:252
+[2023-10-04 19:07:49,296] WARNING opentuner.search.technique: GridSearch has not requested a new result for 250 rounds @technique.py:252
+[2023-10-04 19:07:49,645] WARNING opentuner.search.technique: GridSearch has not requested a new result for 300 rounds @technique.py:252
+[2023-10-04 19:07:49,998] WARNING opentuner.search.technique: GridSearch has not requested a new result for 350 rounds @technique.py:252
+[2023-10-04 19:07:50,359] WARNING opentuner.search.technique: GridSearch has not requested a new result for 400 rounds @technique.py:252
+[2023-10-04 19:07:50,719] WARNING opentuner.search.technique: GridSearch has not requested a new result for 450 rounds @technique.py:252
+[2023-10-04 19:07:51,071] WARNING opentuner.search.technique: GridSearch has not requested a new result for 500 rounds @technique.py:252
+[2023-10-04 19:07:51,411] WARNING opentuner.search.technique: GridSearch has not requested a new result for 550 rounds @technique.py:252
+[2023-10-04 19:07:51,411] WARNING opentuner.search.technique: GridSearch is being reset @technique.py:255
+[2023-10-04 19:07:51,751] WARNING opentuner.search.technique: GridSearch has not requested a new result for 50 rounds @technique.py:252
+[2023-10-04 19:07:52,103] WARNING opentuner.search.technique: GridSearch has not requested a new result for 100 rounds @technique.py:252
+[2023-10-04 19:07:52,464] WARNING opentuner.search.technique: GridSearch has not requested a new result for 150 rounds @technique.py:252
+[2023-10-04 19:07:52,821] WARNING opentuner.search.technique: GridSearch has not requested a new result for 200 rounds @technique.py:252
+[2023-10-04 19:07:53,136] WARNING opentuner.search.technique: GridSearch has not requested a new result for 250 rounds @technique.py:252
+[2023-10-04 19:07:53,467] WARNING opentuner.search.technique: GridSearch has not requested a new result for 300 rounds @technique.py:252
+[2023-10-04 19:07:53,815] WARNING opentuner.search.technique: GridSearch has not requested a new result for 350 rounds @technique.py:252
+[2023-10-04 19:07:54,150] WARNING opentuner.search.technique: GridSearch has not requested a new result for 400 rounds @technique.py:252
+[2023-10-04 19:07:54,511] WARNING opentuner.search.technique: GridSearch has not requested a new result for 450 rounds @technique.py:252
+[2023-10-04 19:07:54,867] WARNING opentuner.search.technique: GridSearch has not requested a new result for 500 rounds @technique.py:252
+[2023-10-06 10:49:19,342]   ERROR opentuner.search.technique: unknown technique OneFactorAtATime @technique.py:363
