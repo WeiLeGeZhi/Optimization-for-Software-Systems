@@ -71,7 +71,6 @@ class GridSearch(technique.SequentialSearchTechnique):
 
     ......
 
-# register our new technique in global list
 technique.register(GridSearch())
 ```
 接下来大部分的工作都是在`main_generator`这个函数中完成的。这是`SequentialSearchTechnique`模型的核心函数，会生成`opentuner.resultsdb.models.Configuration`对象并且在生成配置后阻塞，直到生成相应配置的结果。
@@ -86,49 +85,26 @@ technique.register(GridSearch())
 	driver      = self.driver
 	manipulator = self.manipulator
 ```
-接着，我们把“初始配置组合”定义为：块大小为8，编译优化选项为`-O0`，并通过`yield current`将当前的配置作为生成器的输出。此外，另外再定义一个“配置组合变量”`best_opt`，用来存放当前性能最优的配置组合。
+接着，定义配置空间：
 ```Python
-# start at start point
-    startpoint={'BLOCK_SIZE': 8, 'cmpl_opt': 0}
-    current = driver.get_configuration(startpoint)
-    yield current
-    best_opt = driver.get_configuration(startpoint)
-    yield best_opt
+	# Define the parameter value ranges
+	cmpl_opt_values = [0, 1, 2, 3]
+	block_size_values = [8, 16, 32, 64, 128]
 ```
-在下面的`while`循环中，我们将遍历所有的配置组合。我们首先让块大小从8开始逐步翻倍到128，到达128后让编译优化级别从`-O0`变成`-O1`，然后把块大小重新置为8，开始新的一轮循环，以此类推。当块大小变为128且编译优化级别变为`-O3`，停止迭代，用`sys.exit()`退出`while`循环。
+在下面的`for`循环中，遍历所有的配置组合，并使用`yield config`语句使之生效。遍历完成后，停止迭代，用`sys.exit()`退出循环。
 ```Python
-    while True:
-      points = list()
-      for param in manipulator.parameters(current.data):
-        if param.is_primitive():
-          print("current running:",current.data)
-          if int(current.data['BLOCK_SIZE'])<128:
-            next_para = manipulator.copy(current.data)
-            next_BLOCK_SIZE=int(next_para['BLOCK_SIZE'])*2
-            next_para['BLOCK_SIZE']=str(next_BLOCK_SIZE)
-            next_to_run = driver.get_configuration(next_para)
-            yield next_to_run
-            points.append(next_to_run)
-          elif int(current.data['cmpl_opt'])<3:
-            next_para = manipulator.copy(current.data)
-            next_cmpl_opt=int(next_para['cmpl_opt'])+1
-            next_para['cmpl_opt']=str(next_cmpl_opt)
-            next_para['BLOCK_SIZE']=str(8)
-            next_to_run = driver.get_configuration(next_para)
-            yield next_to_run
-            points.append(next_to_run)
-          else:
-            points.append(current)
-            sys.exit()
-```
-在每一轮迭代中，我们都会把得到的最优性能（也就是运行时间）和当前的最优性能进行比较。如果某个配置下的性能比当前的最优性能还要好，就把`best_opt`设为这个配置组合。
-```Python
- #sort points
-      points.sort(key=cmp_to_key(objective.compare))
+   # Iterate through all parameter combinations
+        for cmpl_opt in cmpl_opt_values:
+            for block_size in block_size_values:
+                config_data = {
+                    'cmpl_opt': cmpl_opt,
+                    'BLOCK_SIZE': block_size
+                }
+                config = driver.get_configuration(config_data)
+                yield config
 
-      current = points[0]
-      if objective.lt(points[0], best_opt):
-        best_opt = points[0]
+        # Signal the end of the search
+        sys.exit()
 ```
 运行`python3 autotuner.py --no-dups --stop-after=30 -t=GridSearch --test-limit=20`命令，用GridSearch对矩阵乘法进行性能调优。我们得到了如下结果：
 
