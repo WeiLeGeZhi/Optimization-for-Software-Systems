@@ -1,0 +1,167 @@
+##STARTING Version 1.0
+2023年 10月 20日 星期五 14:53:56 CST
+##CFlags: -I. -O3
+##CPPFlags: -std=c++14 -I. -O3
+./count_sequence 
+
+test           description   absolute   operations   ratio with
+number                       time       per second   test0
+
+ 0    "uint8_t std::count"   3.70 sec   865.20 M     1.00
+ 1 "uint8_t std::count_if"   3.70 sec   865.80 M     1.00
+ 2        "uint8_t count1"   3.68 sec   870.58 M     0.99
+ 3        "uint8_t count2"   4.05 sec   790.84 M     1.09
+ 4        "uint8_t count3"   3.88 sec   823.87 M     1.05
+ 5        "uint8_t count4"   3.84 sec   833.38 M     1.04
+ 6        "uint8_t count5"   3.87 sec   827.05 M     1.05
+ 7        "uint8_t count6"   3.86 sec   829.73 M     1.04
+ 8        "uint8_t count7"   3.86 sec   828.20 M     1.04
+ 9        "uint8_t count8"   3.94 sec   811.96 M     1.07
+
+Total absolute time for uint8_t count sequence: 38.37 sec
+
+test          description   absolute   operations   ratio with
+number                      time       per second   test0
+
+ 0    "int8_t std::count"   3.69 sec   866.30 M     1.00
+ 1 "int8_t std::count_if"   4.19 sec   763.97 M     1.13
+ 2        "int8_t count1"   3.74 sec   856.28 M     1.01
+ 3        "int8_t count2"   4.05 sec   790.07 M     1.10
+ 4        "int8_t count3"   3.85 sec   831.33 M     1.04
+ 5        "int8_t count4"   3.85 sec   831.49 M     1.04
+ 6        "int8_t count5"   3.90 sec   821.21 M     1.05
+ 7        "int8_t count6"   3.91 sec   818.47 M     1.06
+ 8        "int8_t count7"   3.83 sec   834.45 M     1.04
+ 9        "int8_t count8"   3.85 sec   830.87 M     1.04
+
+Total absolute time for int8_t count sequence: 38.86 sec
+
+test            description   absolute   operations   ratio with
+number                        time       per second   test0
+
+ 0    "uint16_t std::count"   2.43 sec   1317.15 M     1.00
+ 1 "uint16_t std::count_if"   2.42 sec   1319.81 M     1.00
+ 2        "uint16_t count1"   2.41 sec   1325.75 M     0.99
+ 3        "uint16_t count2"   2.12 sec   1510.41 M     0.87
+ 4        "uint16_t count3"   3.73 sec   857.70 M     1.54
+ 5        "uint16_t count4"   3.77 sec   849.69 M     1.55
+ 6        "uint16_t count5"   3.83 sec   835.35 M     1.58
+ 7        "uint16_t count6"   3.71 sec   862.28 M     1.53
+ 8        "uint16_t count7"   3.71 sec   863.41 M     1.53
+ 9        "uint16_t count8"   3.71 sec   863.58 M     1.53
+
+Total absolute time for uint16_t count sequence: 31.84 sec
+
+test           description   absolute   operations   ratio with
+number                       time       per second   test0
+
+ 0    "int16_t std::count"   2.49 sec   1283.89 M     1.00
+ 1 "int16_t std::count_if"   2.92 sec   1097.76 M     1.17
+ 2        "int16_t count1"   2.41 sec   1327.15 M     0.97
+ 3        "int16_t count2"   2.12 sec   1508.89 M     0.85
+ 4        "int16_t count3"   3.72 sec   860.18 M     1.49
+ 5        "int16_t count4"   3.72 sec   860.99 M     1.49
+ 6        "int16_t count5"   3.71 sec   862.14 M     1.49
+ 7        "int16_t count6"   3.71 sec   862.68 M     1.49
+ 8        "int16_t count7"   3.72 sec   860.53 M     1.49
+ 9        "int16_t count8"   3.73 sec   858.32 M     1.50
+
+Total absolute time for int16_t count sequence: 32.24 sec
+
+test            description   absolute   operations   ratio with
+number                        time       per second   test0
+
+ 0    "uint32_t std::count"   1.96 sec   1635.56 M     1.00
+ 1 "uint32_t std::count_if"   1.96 sec   1635.33 M     1.00
+ 2        "uint32_t count1"   1.93 sec   1656.73 M     0.99
+ 3        "uint32_t count2"   1.93 sec   1658.02 M     0.99
+ 4        "uint32_t count3"   2.53 sec   1263.17 M     1.29
+ 5        "uint32_t count4"   2.48 sec   1288.77 M     1.27
+ 6        "uint32_t count5"   2.52 sec   1270.68 M     1.29
+ 7        "uint32_t count6"   2.53 sec   1263.23 M     1.29
+ 8        "uint32_t count7"   2.52 sec   1268.09 M     1.29
+ 9        "uint32_t count8"   2.50 sec   1279.02 M     1.28
+
+Total absolute time for uint32_t count sequence: 22.87 sec
+
+test           description   absolute   operations   ratio with
+number                       time       per second   test0
+
+ 0    "int32_t std::count"   1.94 sec   1650.21 M     1.00
+ 1 "int32_t std::count_if"   1.99 sec   1610.36 M     1.02
+ 2        "int32_t count1"   1.92 sec   1665.85 M     0.99
+ 3        "int32_t count2"   1.93 sec   1661.43 M     0.99
+ 4        "int32_t count3"   2.83 sec   1129.11 M     1.46
+ 5        "int32_t count4"   2.46 sec   1301.76 M     1.27
+ 6        "int32_t count5"   2.49 sec   1287.39 M     1.28
+ 7        "int32_t count6"   2.50 sec   1281.43 M     1.29
+ 8        "int32_t count7"   2.51 sec   1275.22 M     1.29
+ 9        "int32_t count8"   2.52 sec   1270.78 M     1.30
+
+Total absolute time for int32_t count sequence: 23.08 sec
+
+test            description   absolute   operations   ratio with
+number                        time       per second   test0
+
+ 0    "uint64_t std::count"   5.44 sec   588.46 M     1.00
+ 1 "uint64_t std::count_if"   5.47 sec   584.94 M     1.01
+ 2        "uint64_t count1"   3.51 sec   910.97 M     0.65
+ 3        "uint64_t count2"   4.28 sec   747.43 M     0.79
+ 4        "uint64_t count3"   3.53 sec   905.94 M     0.65
+ 5        "uint64_t count4"   3.69 sec   866.78 M     0.68
+ 6        "uint64_t count5"   3.90 sec   820.46 M     0.72
+ 7        "uint64_t count6"   3.56 sec   898.91 M     0.65
+ 8        "uint64_t count7"   3.34 sec   957.64 M     0.61
+ 9        "uint64_t count8"   3.21 sec   995.96 M     0.59
+
+Total absolute time for uint64_t count sequence: 39.94 sec
+
+test           description   absolute   operations   ratio with
+number                       time       per second   test0
+
+ 0    "int64_t std::count"   5.25 sec   609.84 M     1.00
+ 1 "int64_t std::count_if"   5.36 sec   596.76 M     1.02
+ 2        "int64_t count1"   3.54 sec   904.37 M     0.67
+ 3        "int64_t count2"   3.80 sec   842.72 M     0.72
+ 4        "int64_t count3"   3.54 sec   904.74 M     0.67
+ 5        "int64_t count4"   3.52 sec   908.07 M     0.67
+ 6        "int64_t count5"   3.50 sec   914.14 M     0.67
+ 7        "int64_t count6"   3.53 sec   905.92 M     0.67
+ 8        "int64_t count7"   3.18 sec   1005.59 M     0.61
+ 9        "int64_t count8"   3.21 sec   996.19 M     0.61
+
+Total absolute time for int64_t count sequence: 38.43 sec
+
+test         description   absolute   operations   ratio with
+number                     time       per second   test0
+
+ 0    "float std::count"   1.92 sec   1669.61 M     1.00
+ 1 "float std::count_if"   1.91 sec   1676.75 M     1.00
+ 2        "float count1"   1.96 sec   1635.62 M     1.02
+ 3        "float count2"   2.48 sec   1289.33 M     1.29
+ 4        "float count3"   2.84 sec   1126.04 M     1.48
+ 5        "float count4"   2.88 sec   1110.75 M     1.50
+ 6        "float count5"   2.84 sec   1127.34 M     1.48
+ 7        "float count6"   2.79 sec   1145.05 M     1.46
+ 8        "float count7"   2.87 sec   1115.79 M     1.50
+ 9        "float count8"   2.88 sec   1112.52 M     1.50
+
+Total absolute time for float count sequence: 25.36 sec
+
+test          description   absolute   operations   ratio with
+number                      time       per second   test0
+
+ 0    "double std::count"   1.53 sec   2097.40 M     1.00
+ 1 "double std::count_if"   1.53 sec   2092.58 M     1.00
+ 2        "double count1"   1.50 sec   2127.11 M     0.99
+ 3        "double count2"   1.79 sec   1791.32 M     1.17
+ 4        "double count3"   2.16 sec   1481.73 M     1.42
+ 5        "double count4"   2.22 sec   1440.57 M     1.46
+ 6        "double count5"   2.20 sec   1451.79 M     1.44
+ 7        "double count6"   2.15 sec   1488.19 M     1.41
+ 8        "double count7"   1.70 sec   1880.89 M     1.12
+ 9        "double count8"   1.71 sec   1868.38 M     1.12
+
+Total absolute time for double count sequence: 18.50 sec
+2023年 10月 20日 星期五 14:59:05 CST
+##END Version 1.0
