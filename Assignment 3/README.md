@@ -3,6 +3,7 @@
 
 ## Write-up 1
 **请解释一下为什么`clang --version`与`clang++ --version`的输出结果是一样的？**
+
 在知乎问题[请问Clang和Clang++的区别是什么？](https://www.zhihu.com/question/464110189)中，[若梦](https://www.zhihu.com/people/ruomenger)的回答中说道，`clang`和`clang++`其实是完全相同的程序，`clang++`是`clang`的软链接之一，`clang`可编译C程序，`clang++`可编译C\+\+程序，`clang`要加上参数修改处理模式才能编译C\+\+程序。
 
 还有一件很有意思的事情，就是我的虚拟机上明明可以查到`clang++`的版本，但当我执行`man clang++`的时候，它并没有像执行`man clang`时那样出现`clang++`的命令文档。这或许也说明，`clang`和`clang++`其实是同一个东西。
@@ -11,10 +12,12 @@
 
 ## Write-up 2
 **请说明一下你选择了哪个测试例，以及你选择这个测试例的原因。**
+
 我选择了`count_sequence.cpp`这个测试例，因为它排得比较靠前，一开始就被我看到了。而且这个测试用例里面做的事情本质上就是数数，不会有什么特别复杂的算法，代码也不算很长，才四百来行，运行的时间也不会太长。
 
 ## Write-up 3
 **你对`makefile`及所选测试例对应的源文件做了哪些修改，为什么？**
+
 我对`makefile`作了如下修改：
 ```C
 ……
