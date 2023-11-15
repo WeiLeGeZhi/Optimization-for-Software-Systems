@@ -3,7 +3,7 @@ CC := clang
 TARGETS = example1 example2 example3 example4
 
 OTHER_CFLAGS ?=
-CFLAGS := -Wall -g -std=gnu99
+CFLAGS := -Wall -g -std=gnu99 -ffast-math
 
 ifeq ($(DEBUG),1)
   CFLAGS += -O0

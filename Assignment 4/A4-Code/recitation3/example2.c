@@ -14,6 +14,7 @@ void test(uint8_t * restrict a, uint8_t * restrict b) {
 
   for (i = 0; i < SIZE; i++) {
     /* max() */
-    if (y[i] > x[i]) x[i] = y[i];
+    //if (y[i] > x[i]) x[i] = y[i];
+    x[i] = (y[i] > x[i]) ? y[i] : x[i];
   }
 }
