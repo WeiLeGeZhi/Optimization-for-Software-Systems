@@ -1,0 +1,50 @@
+lab/gpu_sample.cpp:156:33: warning: 'gpu_selector' is deprecated: Use the callable sycl::gpu_selector_v instead. [-Wdeprecated-declarations]
+  queue my_gpu_queue( cl::sycl::gpu_selector{} , propList);
+                                ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/device_selector.hpp:62:21: note: 'gpu_selector' has been explicitly marked deprecated here
+class __SYCL_EXPORT __SYCL2020_DEPRECATED(
+                    ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:55:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+#define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+                                       ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:46:38: note: expanded from macro '__SYCL_DEPRECATED'
+#define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+                                     ^
+lab/gpu_sample.cpp:156:9: warning: 'queue' is deprecated: SYCL 1.2.1 device selectors are deprecated. Please use SYCL 2020 device selectors instead. [-Wdeprecated-declarations]
+  queue my_gpu_queue( cl::sycl::gpu_selector{} , propList);
+        ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/queue.hpp:343:3: note: 'queue' has been explicitly marked deprecated here
+  __SYCL2020_DEPRECATED("SYCL 1.2.1 device selectors are deprecated. Please "
+  ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:55:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+#define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+                                       ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:46:38: note: expanded from macro '__SYCL_DEPRECATED'
+#define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+                                     ^
+2 warnings generated.
+lab/gpu_sample.cpp:156:33: warning: 'gpu_selector' is deprecated: Use the callable sycl::gpu_selector_v instead. [-Wdeprecated-declarations]
+  queue my_gpu_queue( cl::sycl::gpu_selector{} , propList);
+                                ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/device_selector.hpp:62:21: note: 'gpu_selector' has been explicitly marked deprecated here
+class __SYCL_EXPORT __SYCL2020_DEPRECATED(
+                    ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:55:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+#define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+                                       ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:46:38: note: expanded from macro '__SYCL_DEPRECATED'
+#define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+                                     ^
+lab/gpu_sample.cpp:156:9: warning: 'queue' is deprecated: SYCL 1.2.1 device selectors are deprecated. Please use SYCL 2020 device selectors instead. [-Wdeprecated-declarations]
+  queue my_gpu_queue( cl::sycl::gpu_selector{} , propList);
+        ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/queue.hpp:343:3: note: 'queue' has been explicitly marked deprecated here
+  __SYCL2020_DEPRECATED("SYCL 1.2.1 device selectors are deprecated. Please "
+  ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:55:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+#define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+                                       ^
+/glob/development-tools/versions/oneapi/2023.2.0.1/oneapi/compiler/2023.2.1/linux/bin-llvm/../include/sycl/detail/defines_elementary.hpp:46:38: note: expanded from macro '__SYCL_DEPRECATED'
+#define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+                                     ^
+2 warnings generated.

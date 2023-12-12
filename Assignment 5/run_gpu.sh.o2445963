@@ -1,0 +1,20 @@
+
+########################################################################
+#      Date:           Mon Dec 11 04:41:40 AM PST 2023
+#    Job ID:           2445963.v-qsvr-1.aidevcloud
+#      User:           u208614
+# Resources:           cput=75:00:00,neednodes=1:gpu:ppn=2,nodes=1:gpu:ppn=2,walltime=06:00:00
+########################################################################
+
+## u208614 is compiling SYCL_Essentials Module2 -- SYCL Program Structure sample - 1 of 7 gpu_sample.cpp
+Problem size: c(2000,2000) = a(2000,2000) * b(2000,2000)
+
+Performance Flops = 16000000000.000000, 
+GPU Computation Time = 877.385516 (ms); 
+CPU Computaiton Time = 2625.737549 (ms); 
+
+########################################################################
+# End of output for job 2445963.v-qsvr-1.aidevcloud
+# Date: Mon Dec 11 04:43:29 AM PST 2023
+########################################################################
+
